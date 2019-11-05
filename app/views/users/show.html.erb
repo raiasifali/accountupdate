@@ -1,0 +1,46 @@
+<p id="notice"><%= notice %></p>
+<h3 style="color: red;">Show User Details <%= @user.name%></h3>
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+  <table class="table">
+    <tr>
+      <td> <strong>User Name</strong></td>
+      <td>  <%= @user.username %></td>
+    </tr>
+     <tr>
+      <td> <strong>Name</strong></td>
+      <td>  <%= @user.name %></td>
+    </tr>
+    <tr>
+      <td> <strong>Father Name</strong></td>
+      <td>  <%= @user.father_name %></td>
+    </tr>
+
+    <tr>
+      <td> <strong>Cell No</strong></td>
+      <td>  <%= @user.cell_no %></td>
+    </tr>
+
+    <tr>
+      <td> <strong>Email</strong></td>
+      <td>  <%= @user.email %></td>
+    </tr>
+    <tr>
+      <td> <strong>Next To Kin</strong></td>
+      <td>  <%= @user.next_to_kin %></td>
+    </tr>
+
+    <tr>
+      <td> <strong>Password</strong></td>
+      <td>  <%= @user.password %></td>
+    </tr>
+    <tr>
+      <td><%= link_to 'Edit', edit_user_path(@user) , class: "btn btn-primary" %> </td>
+      <td><%= link_to 'Back', users_path , class: "btn btn-info"%></td>
+    </tr>
+  </table>
+
+</div>
+    <div class="col-md-2"></div>
+  </div>

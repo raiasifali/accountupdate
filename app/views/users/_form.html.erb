@@ -1,0 +1,55 @@
+
+<%= form_with(model: user, local: true) do |form| %>
+<div class="row">
+  <div class="col-md-1"></div>
+  <div class="col-md-8"> <% if user.errors.any? %>
+    <div id="error_explanation">
+      <h5 style="color: red;"><%= pluralize(user.errors.count, "error") %> Fields Are required:</h5>
+
+      <ul>
+        <% user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %></div>
+  <div class="col-md-1"></div>
+</div>
+
+
+ <table class="table">
+  <tr class="form-group">
+    <td> <label>UserName</label></td>
+    <td>    <%= form.text_field :username , class: "form-control"%></td>
+  </tr>
+   <tr>
+    <td class="form-group"> <label>Name</label></td>
+    <td>   <%= form.text_field :name, class: "form-control" %></td>
+  </tr>
+   <tr>
+    <td class="form-group"> <label>Father Name</label></td>
+    <td>   <%= form.text_field :father_name, class: "form-control" %></td>
+  </tr>
+   <tr>
+    <td class="form-group"> <label>Cell NO</label></td>
+    <td>   <%= form.text_field :cell_no, class: "form-control" %></td>
+  </tr>
+  <tr>
+    <td class="form-group"> <label>Next To Kin</label></td>
+    <td>   <%= form.text_field :next_to_kin, class: "form-control" %></td>
+  </tr>
+   <tr>
+    <td class="form-group"> <label>Email</label></td>
+    <td>   <%= form.text_field :email, class: "form-control" %></td>
+  </tr>
+   <tr>
+    <td class="form-group"> <label>Password</label></td>
+    <td>   <%= form.text_field :password, class: "form-control" %></td>
+  </tr>
+  <tr class="form-group">
+    <td colspan="2"><button class="btn btn-info"><%= form.submit %></button></td>
+  </tr>
+
+</table>
+
+<% end %>
