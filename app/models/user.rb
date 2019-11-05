@@ -7,6 +7,12 @@ validates :cell_no, presence: true
 validates :next_to_kin, presence: true
 validates :father_name, presence: true
 
+before_validation :normalize_name, on: :create
 
-
+private
+ def normalize_name
+      self.name=name.downcase.titleize 
+    end
+ 
+ 
 end
