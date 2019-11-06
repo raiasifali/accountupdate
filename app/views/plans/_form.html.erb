@@ -1,0 +1,57 @@
+
+<%= form_with(model: plan, local: true) do |form| %>
+  <% if plan.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(plan.errors.count, "error") %> prohibited this plan from being saved:</h2>
+
+      <ul>
+        <% plan.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+ <table class="table">
+  <tr class="form-group">
+    <td> <label>user_id</label></td>
+    <td><%= form.number_field :user_id, class: "form-control"%></td>
+  </tr>
+  
+  
+  <tr>
+    <td class="form-group"> <label>Plan name</label></td>
+    <td>   <%= form.text_field :plan_name, class: "form-control" %></td>
+  </tr>
+  <tr class="control-group">
+    <td> <label>Plan Type</label></td>
+    <td > <div class="controls">
+    <%=  form.select(:plan_type, options_for_select([['Growth-A','Growth-A'],['Growth-B','Growth-B'],['Growth-C','Growth-C']]),{}, { class: "form form-group form-control" }) %>
+    </div>
+    </td>
+  </tr>
+  <tr class="form-group">
+    <td ><label>Gender</label></td>
+    <td> <%= form.radio_button(:gender, "Male") %>
+            <%= form.label(:gender, "Male") %>
+            <%= form.radio_button(:gender, "Female") %>
+            <%= form.label(:gender, "Female") %> </td>
+  </tr>
+  <tr class="form-group">
+    <td ><label>SMS Alert</label></td>
+    <td><%= form.check_box :sms_alert, sms_alert: "enr_rds_surv_rdsap_xref_answer_check"%></td>
+  </tr>
+  <tr>
+    <td><label>Email Alert</label></td>
+    <td><%= form.check_box :email %> </td>
+  </tr>
+   
+  <tr class="form-group">
+    <td colspan="2"><button class="btn btn-info"><%= form.submit %></button></td>
+  </tr>
+
+</table>
+
+<% end %> 
+
+

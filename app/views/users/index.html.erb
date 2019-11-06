@@ -5,6 +5,7 @@
 <table class="table table-striped">
   <thead>
     <tr>
+      <td>Id</td>
       <th>Username</th>
       <th>Name</th>
       <th>Father name</th>
@@ -19,6 +20,7 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
+        <td><%= user.id %></td>
         <td><%= user.username %></td>
         <td><%= user.name %></td>
         <td><%= user.father_name %></td>

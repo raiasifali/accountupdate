@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>All Plans Here</h1>
+
+<table class="table table-stripped">
+  <thead>
+    <tr>
+      <th>Plan name</th>
+      <th>Plan type</th>
+      <th>Email Alert</th>
+      <th>SMS Alert</th>
+      <th>Gender</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @plans.each do |plan| %>
+      <tr>
+        <td><%= plan.plan_name  %></td>
+        <td><%= plan.plan_type %></td>
+        <td><%= plan.email %></td>
+        <td><%= plan.sms_alert %></td>
+        <td><%= plan.gender %></td>
+        <td><%= link_to 'Show', plan , class: "btn btn-primary" %></td>
+        <td><%= link_to 'Edit', edit_plan_path(plan) , class: "btn btn-success"%></td>
+        <td><%= link_to 'Destroy', plan, method: :delete, data: { confirm: 'Are you sure?'} , class: "btn btn-danger" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Plan', new_plan_path , class: "btn btn-primary" %>
