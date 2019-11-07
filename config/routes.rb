@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :user_auths
   resources :plans
  root "users#index"
   resources :users
