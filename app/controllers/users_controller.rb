@@ -1,14 +1,17 @@
 class UsersController < ApplicationController
+  USER_PER_PAGE = 5;
+
   before_action :authenticate_user_auth!
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-
   # GET /users
   # GET /users.json
   def index
    if params[:search]
     @users = User.where(["name LIKE ?","%#{params[:search]}%"])
+     @us= 4
    else
-    @users = User.all
+    @us= params.fetch(:page,0).to_i
+    @users = User.offset(@us).limit(USER_PER_PAGE)
    end
   end
 

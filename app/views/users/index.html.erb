@@ -1,18 +1,24 @@
 <p id="notice"><%= notice %></p>
-
-<%=  form_tag users_path, :method => 'get' do %>
-<div class="form-group" style="width: 300px;margin-left: 930px;">
+<div class="row">
+  <div class="col-md-6"><h1>All Users List </h1></div>
+  <div class="col-md-4"><%=  form_tag users_path, :method => 'get' do %>
+<div class="form-group" style="width: 300px;margin-left: 300px;">
+  
   <table>
     <tr>
       <td><%=  text_field_tag :search, params[:search] , placeholder: "User Search here", class: "form-control" %>
 </td>
-      <td> <%= submit_tag "Search" , class: "btn btn-success" %></td>
-    </tr>
+      <td> <%= submit_tag "Search" , class: "btn btn-success" %><% end %></td>
+</tr>
   </table>
 </div>
-<% end %>
+</div>
 
-<h1>All Users List </h1>
+<div class="col-md-2"></div>
+</div>
+
+
+
 <table class="table table-striped">
   <thead>
     <tr>
@@ -47,6 +53,9 @@
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New User', new_user_path , class: "btn btn-primary"%>
+<div style="margin-left: 400px;">
+  <button class="btn btn-success"><%= link_to "First Page", users_path  %></button> |
+  <button class="btn btn-success"><%= link_to "Previous Page", users_path(page: @us-1)  %></button> |
+  <button class="btn btn-success"><%= link_to "Next Page", users_path(page: @us+1) %></button>
+</div>
+<%= link_to 'New User', new_user_path , class: "btn btn-primary"%> 
