@@ -10,8 +10,8 @@ class UsersController < ApplicationController
     @users = User.where(["name LIKE ?","%#{params[:search]}%"])
      @us= 4
    else
-    @us= params.fetch(:page,0).to_i
-    @users = User.offset(@us).limit(USER_PER_PAGE)
+    @pagy, @users = pagy(User.all, items: 5)
+    
    end
   end
 
@@ -34,6 +34,7 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
+
     @user = User.new(user_params)
 
     respond_to do |format|

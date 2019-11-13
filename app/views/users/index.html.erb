@@ -54,8 +54,6 @@
 </table>
 
 <div style="margin-left: 400px;">
-  <button class="btn btn-success"><%= link_to "First Page", users_path  %></button> |
-  <button class="btn btn-success"><%= link_to "Previous Page", users_path(page: @us-1)  %></button> |
-  <button class="btn btn-success"><%= link_to "Next Page", users_path(page: @us+1) %></button>
+  <%== pagy_bootstrap_nav(@pagy)  %>
 </div>
 <%= link_to 'New User', new_user_path , class: "btn btn-primary"%> 
