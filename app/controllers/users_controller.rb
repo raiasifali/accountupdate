@@ -7,8 +7,7 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
    if params[:search]
-    @users = User.where(["name LIKE ?","%#{params[:search]}%"])
-     @us= 4
+     @pagy, @users = pagy(User.where(["name LIKE ?","%#{params[:search]}%"]), items: 5)
    else
     @pagy, @users = pagy(User.all, items: 5)
     
