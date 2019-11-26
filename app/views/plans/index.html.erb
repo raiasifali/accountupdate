@@ -19,9 +19,6 @@
       <tr>
         <td><%= plan.plan_name  %></td>
         <td><%= plan.plan_type %></td>
-        <td><%= plan.email %></td>
-        <td><%= plan.sms_alert %></td>
-        <td><%= plan.gender %></td>
         <td><%= link_to 'Show', plan , class: "btn btn-primary" %></td>
         <td><%= link_to 'Edit', edit_plan_path(plan) , class: "btn btn-success"%></td>
         <td><%= link_to 'Destroy', plan, method: :delete, data: { confirm: 'Are you sure?'} , class: "btn btn-danger" %></td>

@@ -36,6 +36,15 @@
       <td>  <%= @user.password %></td>
     </tr>
     <tr>
+      <td> <strong>Gender</strong></td>
+      <td>  <%= @user.gender %></td>
+    </tr>
+
+    <tr>
+      <td> <strong>SMS Alert</strong></td>
+      <td>  <%= @user.sms_alert %></td>
+    </tr>
+    <tr>
       <td><%= link_to 'Edit', edit_user_path(@user) , class: "btn btn-primary" %> </td>
       <td><%= link_to 'Back', users_path , class: "btn btn-info"%></td>
     </tr>

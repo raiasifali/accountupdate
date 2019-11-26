@@ -30,22 +30,7 @@
     </div>
     </td>
   </tr>
-  <tr class="form-group">
-    <td ><label>Gender</label></td>
-    <td> <%= form.radio_button(:gender, "Male") %>
-            <%= form.label(:gender, "Male") %>
-            <%= form.radio_button(:gender, "Female") %>
-            <%= form.label(:gender, "Female") %> </td>
-  </tr>
-  <tr class="form-group">
-    <td ><label>SMS Alert</label></td>
-    <td><%= form.check_box :sms_alert, sms_alert: "enr_rds_surv_rdsap_xref_answer_check"%></td>
-  </tr>
-  <tr>
-    <td><label>Email Alert</label></td>
-    <td><%= form.check_box :email %> </td>
-  </tr>
-   
+ 
   <tr class="form-group">
     <td colspan="2"><button class="btn btn-info"><%= form.submit %></button></td>
   </tr>
