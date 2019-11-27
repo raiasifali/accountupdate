@@ -2,7 +2,7 @@
 <h3 style="color: red;">Show User Details <%= @user.name%></h3>
   <div class="row">
     <div class="col-md-2"></div>
-    <div class="col-md-8">
+    <div class="col-md-6">
   <table class="table">
     <tr>
       <td> <strong>User Name</strong></td>
@@ -44,6 +44,7 @@
       <td> <strong>SMS Alert</strong></td>
       <td>  <%= @user.sms_alert %></td>
     </tr>
+
     <tr>
       <td><%= link_to 'Edit', edit_user_path(@user) , class: "btn btn-primary" %> </td>
       <td><%= link_to 'Back', users_path , class: "btn btn-info"%></td>
@@ -51,5 +52,5 @@
   </table>
 
 </div>
-    <div class="col-md-2"></div>
+    <div class="col-md-4"><%= image_tag(@user.image, style:"width:100%") %></div>
   </div>
