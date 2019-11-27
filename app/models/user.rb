@@ -7,7 +7,7 @@ validates :cell_no, presence: true
 validates :next_to_kin, presence: true
 validates :father_name, presence: true
 
-has_many :plans
+
 has_one_attached :image
 before_validation :normalize_name, on: :create
 
