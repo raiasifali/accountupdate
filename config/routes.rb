@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'userplan/index'
+  get 'userplan/create'
+  get 'userplan/show'
+  get 'userplan/new'
   resources :usermailers
   devise_for :user_auths
   resources :plans
